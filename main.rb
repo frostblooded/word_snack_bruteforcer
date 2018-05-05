@@ -11,5 +11,5 @@ puts lengths
 lengths.each do |length|
   permutations = letters.permutation(length).to_a
   words = permutations.map(&:join)
-  puts words
+
 end
