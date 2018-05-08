@@ -3,7 +3,7 @@ class WordsHandler
 
   def self.real_word?(word)
     WordsHandler.load if @words.nil?
-    @words.include? word
+    @words.bsearch { |line| word <=> line }
   end
 
   def self.load
