@@ -1,7 +1,4 @@
-def real_word?(word)
-  words = File.readlines('words.txt').map(&:chomp)
-  words.include? word
-end
+require './words_handler'
 
 puts 'Enter letters (example: "абжвд"):'
 letters = gets.chomp.split ''
@@ -14,6 +11,6 @@ lengths.each do |length|
   words = permutations.map(&:join)
 
   words.each do |word|
-    puts word if real_word? word
+    puts word if WordsHandler.real_word? word
   end
 end
